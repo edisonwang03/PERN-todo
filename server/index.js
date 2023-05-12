@@ -81,3 +81,5 @@ app.delete("/todos/:id", async (req, res) => {
         console.error(err.message);
     }
 });
+
+app.listen(6473, () => console.log("Server running on port 6473"));
