@@ -1,7 +1,0 @@
-name: my-pern-app
-services:
-  web:
-    build:
-      command: docker build -t railway/my-pern-app . && docker run -p $RAILWAY_APP_PORT:3000 -e DATABASE_URL=$DATABASE_URL railway/my-pern-app
-    env:
-      PORT: 3000
