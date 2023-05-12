@@ -19,4 +19,4 @@ EXPOSE 5000
 EXPOSE 3000
 
 # Start the server and client using separate terminals
-CMD ["sh", "-c", "cd server && npm start & cd ../client && npm start & wait"]
+CMD ["sh", "-c", "cd server && node index.js & cd ../client && npm start & wait"]
