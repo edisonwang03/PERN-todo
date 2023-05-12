@@ -15,7 +15,7 @@ RUN cd server && npm install && cd ../client && npm install
 COPY . .
 
 # Expose port 5000 for the server and 3000 for the client
-EXPOSE 5000
+EXPOSE 6473
 EXPOSE 3000
 
 # Start the server and client using separate terminals
