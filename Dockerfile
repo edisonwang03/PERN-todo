@@ -19,5 +19,4 @@ EXPOSE 5000
 EXPOSE 3000
 
 # Start the server and client using separate terminals
-CMD ["node", "server/index.js"]
 CMD ["npm", "start", "--prefix", "client"]
