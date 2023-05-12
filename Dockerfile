@@ -1,23 +1,22 @@
-# Set the base image to use
+# Use the official Node.js 16 image as the parent image
 FROM node:16
 
-# Create and set the working directory
+# Set the working directory to /app
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files to the working directory
-COPY package*.json ./
+# Copy the package.json files for both the server and client
+COPY server/package*.json ./server/
+COPY client/package*.json ./client/
 
 # Install the dependencies for both the server and client
-RUN npm install && cd client && npm install
+RUN cd server && npm install && cd ../client && npm install
 
 # Copy the remaining files to the working directory
 COPY . .
 
-# Build the client
-RUN cd client && npm run build
+# Expose port 5000 for the server and 3000 for the client
+EXPOSE 5000
+EXPOSE 3000
 
-# Expose the port your server will run on
-EXPOSE 8080
-
-# Start both the server and the client
-CMD ["npm", "run", "start"]
+# Start the server and client using separate terminals
+CMD ["sh", "-c", "cd server && npm start & cd ../client && npm start & wait"]
