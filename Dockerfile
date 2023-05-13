@@ -1,7 +1,7 @@
-# Use an official Node.js runtime as a parent image
-FROM node:14
+# Use the official Node.js 16 image as the parent image
+FROM node:16
 
-# Set the working directory to /app
+# Set the working directory in the container
 WORKDIR /app
 
 # Copy the server package.json and package-lock.json files to the container
@@ -24,5 +24,8 @@ COPY client ./client/
 EXPOSE 5000
 EXPOSE 3000
 
-# Start the server and client
-CMD ["sh", "-c", "cd server && node index.js & cd client && npm start"]
+# Install pm2
+RUN npm install pm2 -g
+
+# Start the server and client using pm2
+CMD ["sh", "-c", "cd server && pm2 start index.js --name server --no-daemon && cd ../client && pm2 start npm -- start --name client --no-daemon && pm2 logs"]
