@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const pool = require("./db");
+
+//middleware
+app.use(cors());
+app.use(express.json()); //req.body
 
 //ROUTES//
 
@@ -77,6 +82,6 @@ app.delete("/todos/:id", async (req, res) => {
     }
 });
 
-app.listen(process.env.PGPORT, () => {
-    console.log("Server running on port ${process.env.PGPORT}")
+app.listen(5000, () => {
+    console.log(`Server running on port 5000`)
 });
