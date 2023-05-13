@@ -1,14 +1,28 @@
 {
-  "dependencies": {
-    "pg": "^8.10.0"
-  },
   "name": "pern-todo",
-  "description": "Website: https://pern-todo-production.up.railway.app/",
   "version": "1.0.0",
+  "description": "Website: https://pern-todo-production.up.railway.app/",
   "main": "index.js",
+  "dependencies": {
+    "buffer-writer": "^2.0.0",
+    "packet-reader": "^1.0.0",
+    "pg": "^8.10.0",
+    "pg-connection-string": "^2.5.0",
+    "pg-int8": "^1.0.1",
+    "pg-pool": "^3.6.0",
+    "pg-protocol": "^1.6.0",
+    "pg-types": "^2.2.0",
+    "pgpass": "^1.0.5",
+    "postgres-array": "^2.0.0",
+    "postgres-bytea": "^1.0.0",
+    "postgres-date": "^1.0.7",
+    "postgres-interval": "^1.2.0",
+    "split2": "^4.2.0",
+    "xtend": "^4.0.2"
+  },
   "devDependencies": {},
   "scripts": {
-    "start": "cd server && node index.js && cd ../client && npm start"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC"
