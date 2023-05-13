@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "pg": "^8.10.0"
-  }
+  },
+  "name": "pern-todo",
+  "description": "Website: https://pern-todo-production.up.railway.app/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./server/index.js && ./client && npm start"
+  },
+  "author": "",
+  "license": "ISC"
 }
