@@ -23,7 +23,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "start cmd /k \"cd server && node index.js\" && start cmd /k \"cd client && npm start\""
+    "start": "gnome-terminal --working-directory=./server -e 'node index.js' && gnome-terminal --working-directory=./client -e 'npm start'"
   },
   "author": "",
   "license": "ISC"
