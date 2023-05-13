@@ -8,7 +8,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node ./server/index.js && ./client && npm start"
+    "start": "cd server && node index.js && cd ../client && npm start"
   },
   "author": "",
   "license": "ISC"
