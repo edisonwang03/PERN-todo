@@ -77,4 +77,6 @@ app.delete("/todos/:id", async (req, res) => {
     }
 });
 
-app.listen(6473, () => console.log("Server running on port 6473"));
+app.listen(process.env.PGPORT, () => {
+    console.log("Server running on port ${PGPORT}")
+});

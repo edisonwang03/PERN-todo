@@ -1,10 +1,7 @@
-const { Pool } = require('pg');
+const { Pool } = require("pg");
 
 const pool = new Pool({
-    connectionString: "postgresql://postgres:osz5AGVGlKTbUPwsDXMr@containers-us-west-111.railway.app:6473/railway",
-    ssl: {
-        rejectUnauthorized: false
-  }
+    connectionString: process.env.DATABASE_URL,
 });
 
 module.exports = pool;
